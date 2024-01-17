@@ -15,6 +15,7 @@ services:
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
+      WP_CLI_CACHE_DIR: /tmp
     volumes:
       - ./src:/var/www/html
       - ./conf.d/wp-config.php:/var/www/html/wp-config.php
