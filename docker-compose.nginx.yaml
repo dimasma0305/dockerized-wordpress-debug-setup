@@ -15,6 +15,7 @@ services:
       WORDPRESS_DB_NAME: exampledb
     volumes:
       - ./src:/var/www/html
+      - ./conf.d/wp-config.php:/var/www/html/wp-config.php
       - ./conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
   db:
