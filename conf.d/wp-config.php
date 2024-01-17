@@ -38,6 +38,9 @@ class ObjInjec
    }
 }
 
+// disable wp auto update
+define('WP_AUTO_UPDATE_CORE', false);
+
 // a helper function to lookup "env_FILE", "env", then fallback
 if (!function_exists('getenv_docker')) {
 	// https://github.com/docker-library/wordpress/issues/588 (WP-CLI will load this file 2x)
