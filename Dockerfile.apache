@@ -1,0 +1,11 @@
+FROM wordpress:php7.4-apache
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x wp-cli.phar && \
+    mv wp-cli.phar /usr/local/bin/wp
+
+RUN pecl install xdebug-3.0.0 && docker-php-ext-enable xdebug
+RUN apt-get update
+RUN apt-get install -y libxml2-dev
+RUN docker-php-ext-install mysqli pdo pdo_mysql soap
+RUN docker-php-ext-enable mysqli pdo pdo_mysql soap
